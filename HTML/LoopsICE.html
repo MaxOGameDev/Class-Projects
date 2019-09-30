@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Loops ICE</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" >
+$(document).ready( function() {
+    $("#loopPrompt").click( function() {
+    var output = "";	
+    var userInput = "";			
+    while (userInput != null) {
+    userInput = prompt("What do you wanna type?");
+    if (userInput != null) {
+    output += "<ul>" + userInput + "<ul/>";
+    } else if (userInput == "END") {
+    break; 
+    } else if (userInput == "SKIP") {
+    continue;
+    } else 
+    break;
+}
+    $("#typedLoopOutput").html(output);
+    output = ""; 
+    var i;
+    for (i = 0; i < 101; i++) {
+    output += "The value of <b>i</b> is now: " + i + "<br/>";
+}
+    $("#firstLoopOutput").html(output);
+    output = ""	;
+    for (i = 0; i < 51; i=i+2) {
+    output += "The value of <b>i</b> is now: " + i + "<br/>";
+}   $("#secondLoopOutput").html(output);
+    });
+});
+        </script>
+    </head>
+    <body>
+        <p><input type="button" value="Click to start typing inputs" id="loopPrompt"></p>
+        <p> Loop Output:</p>
+        <p id="typedLoopOutput"></p>
+        <hr/>
+        <p> Part 1 Output</p>
+        <p id="firstLoopOutput"></p>
+        <p> Part 1 Output Part 2!</p>
+        <p id="secondLoopOutput"></p>
+    </body>
+</html>

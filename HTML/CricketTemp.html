@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Template</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<script>
+    $(document).ready(function(){
+       $("#cricketChirps").click(function(){
+          var num=$("#chirpNum").val();
+            if (num >= 0)
+            {
+                var num=num+40/4
+                $("#outputTemp").html("The temperature is: " + num);
+            }
+       }); 
+    });
+</script>
+</head>
+<body>
+<h2>Temperature According To Circket Sounds</h2>    
+<form>  
+<p>Type the number of times the cricket chirped:<input type="text" id="chirpNum"><br>  
+<input type="button" id="cricketChirps" value="Calculate temperature"><br>  
+</p>
+<p id="outputTemp">The temperature is!</p>
+</form>   
+</body>

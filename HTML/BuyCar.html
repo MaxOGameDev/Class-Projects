@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example: Check boxes</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getResponse").click( function() {
+			var startingText = "Your total cost is ";
+			var feedback = startingText;
+			if( $('#checkboxNewPaint').is(':checked') )
+				feedback = feedback + " New Paint($200)";
+			if( $('#checkboxBigSpeakers').is(':checked') )
+				feedback = feedback + ", big speakers($150)";
+			if( $('#checkboxSubWoofer').is(':checked') )
+				feedback = feedback + ", a subwoofer($250)";
+			if( $('#checkboxNewTires').is(':checked') )
+				feedback = feedback + ", and new tires($400)";
+			if( feedback == startingText) 
+				feedback = "Nothing? Alright then.";
+			else
+				feedback = feedback + " Enjoy.";
+       		$("#responseHere").html( feedback );
+       });
+    });
+</script>
+</head>
+<body> 
+<form>
+<h3>What do you want to add to your car?</h3>
+<p>
+<input id="checkboxNewPaint"  type="checkbox" value="NewPaint" checked="checked">New Coat of paint is $200<br/>
+<input id="checkboxBigSpeakers" type="checkbox"> New speakers are $150<br/>
+<input id="checkboxSubWoofer" type="checkbox" checked> A subwoofer is worth $250<br/>
+<input id="checkboxNewTires" type="checkbox"> New tires cost about $400<br/>
+<input type="button" id="getResponse" value="Click here for your total">
+</p>
+</form>
+<p id="responseHere">Some Fascinating Text! That I will change!  With jQuery!</p>
+</body>
+</html>

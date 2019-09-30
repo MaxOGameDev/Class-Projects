@@ -1,0 +1,47 @@
+<!DOCTPYE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ExternalStyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+alert('Its actually working!');
+});
+</script>
+<script>
+$(document).ready(function(){
+    $("#paratochange").html("You never even saw the last paragraph!");
+});    
+</script>
+<script>
+$(document).ready(function(){
+    $("#abutton").click(function(){
+        alert('Congrats, you can click buttons');
+    });
+});    
+</script>
+<script>
+$(document).ready(function(){
+    $("#thebutton").click(function(){
+        var input = $("#input").val();
+        alert("Congrats, totally person of interest " + input);
+    });
+});    
+</script>
+</head>
+<body>
+<p class="center">Take a clook</p>
+<p class="center">It's in a book</p>
+<p class="center">The infinite voooooiiiiiiiddddddd</p>
+<p id="paratochange" class="center">This won't even get seen</p>
+<h1 class="center">HERE, HAVE A BUTTON</h1>
+<form>
+<input type="button" value="Come on, click me" id="abutton">    
+</form>
+<h1 class="center">NOW INPUT YOUR NAME</h1>
+<form>
+<p>Here's where you need to type: <input type="text" id="input"></p> 
+<input type="button" value="Cliiick" id="thebutton">
+</form>
+</body>
+</html>

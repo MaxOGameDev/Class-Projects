@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pizza Prices</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+       $("#getResponse").click( function() {
+			var startingText = "Your total cost is ";
+			var feedback = startingText;
+            var total = 0.00;
+            var small = 10.00;
+            var medium = 13.00;
+            var large = 16.00;
+            var thinCrust = 2.00;
+            var regularCrust = 4.00;
+            var deepCrust = 6.00;
+            var oneTopping = 1.00;
+            if (document.getElementById('pizzaSmall').checked){
+                var total = total + small;
+          } else if (document.getElementById('pizzaMedium').checked){
+                var total = total + medium;
+          } else if (document.getElementById('pizzaLarge').checked){
+                var total = total + large;
+          } else if (document.getElementById('pizzaThin').checked){
+                var total = total + thinCrust;
+          } else if (document.getElementById('pizzaRegular').checked){
+                var total = total + regularCrust;
+          } else if (document.getElementById('pizzaDeep').checked){
+                var total = total + deepCrust;
+          } else if (document.getElementById('pizzaPepperoni').checked){
+                var total = total + oneTopping;
+          } else if (document.getElementById('pizzaSausage').checked){
+                var total = total + oneTopping;
+          } else if (document.getElementById('pizzaOnions').checked){
+                var total = total + oneTopping;
+          } else if (document.getElementById('pizzaMushrooms').checked){
+                var total = total + oneTopping;
+          } else if (document.getElementById('pizzaPeppers').checked){
+                var total = total + oneTopping;
+          } else if (document.getElementById('pizzaOlives').checked){
+                var total = total + oneTopping;
+          } else if (document.getElementById('pizzaGarlic').checked){
+                var total = total + oneTopping;
+          }
+                feedback = feedback + total;
+                $("#responseHere").html(feedback);
+       });         
+    }); 
+</script>
+<script>
+$(document).ready(function(){
+    $("input[name='toppings']").change(function(){
+        var limit = 3;
+        var cnt = $("input[name='toppings']:checked").length
+        if(cnt > limit) {
+            $(this).prop("checked", "");
+        }
+    })
+})   
+</script>
+</head>
+<body> 
+<form>
+<h3>Choose Your Pizza</h3>
+<p>
+Pizza Size:<br/>
+<input id="pizzaSmall" name="sizes"  type="radio" value="Small">Small<br/>
+<input id="pizzaMedium" name="sizes" type="radio" value="Medium">Medium<br/>
+<input id="pizzaLarge" name="sizes" type="radio" value="Large">Large<br/>
+Pizza Crust:<br/>
+<input id="pizzaThin" name="crusts"  type="radio" value="Thin">Thin<br/>
+<input id="pizzaRegular" name="crusts" type="radio" value="Regular">Regular<br/>
+<input id="pizzaDeep" name="crusts" type="radio" value="Deep Dish">Deep Dish<br/>
+Pizza Sauce:<br/>
+<input id="pizzaRed" name="sauces" type="radio" value="Red">Red Sauce<br/>
+<input id="pizzaWhite" name="sauces" type="radio" value="White">White Sauce<br/>
+<input id="pizzaGreen" name="sauces" type="radio" value="Green">Green Sauce<br/>
+Pizza Toppings:<br/>
+<input id="pizzaPepproni" name="toppings" type="checkbox" value="Pepperoni">Pepperoni<br/>
+<input id="pizzaSausage" name="toppings" type="checkbox" value="Sausage">Sausage<br/>
+<input id="pizzaOnions" name="toppings" type="checkbox" value="Onion">Onions<br/>
+<input id="pizzaMushrooms" name="toppings" type="checkbox" value="Mushrooms">Mushrooms<br/>
+<input id="pizzaPeppers" name="toppings" type="checkbox" value="Peppers">Peppers<br/>
+<input id="pizzaOlives" name="toppings" type="checkbox" value="Olives">Olives<br/>
+<input id="pizzaGarlic" name="toppings" type="checkbox" value="Garlic">Garlic<br/>
+<input type="button" id="getResponse" value="Click here for your total"></p>
+</form>
+<p id="responseHere">Your Total Will Display Here</p>
+</body>
+</html>
