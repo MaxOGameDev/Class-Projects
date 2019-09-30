@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Assignment 2</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<style>
+.jumbotron {
+	background: rgb(158,232,250);
+	background: -moz-linear-gradient(top,  rgba(158,232,250,1) 0%, rgba(214,249,255,1) 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(158,232,250,1)), color-stop(100%,rgba(214,249,255,1))); 
+	background: -webkit-linear-gradient(top,  rgba(158,232,250,1) 0%,rgba(214,249,255,1) 100%);
+	background: -o-linear-gradient(top,  rgba(158,232,250,1) 0%,rgba(214,249,255,1) 100%); 
+	background: -ms-linear-gradient(top,  rgba(158,232,250,1) 0%,rgba(214,249,255,1) 100%); 
+	background: linear-gradient(to bottom,  rgba(158,232,250,1) 0%,rgba(214,249,255,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ee8fa', endColorstr='#d6f9ff',GradientType=0 ); 
+}
+</style>
+<script>
+$(document).ready(function(){
+   $("#calculateGpa").click(function(){
+       var num=$("#scoreNum").val();
+       num = parseFloat(num);
+       if (isNaN(num)) {
+           $("#outputGpa").html("You have to type in a number first!")
+           return;
+    } else if (num < 1 || num > 100) {
+           $("#outputGpa").html("That number doesn't compute with GPA!")
+           return;
+    } else if (num <= 62) {
+           $("#outputGpa").html("Your GPA Is: 0.0")
+    } else if (num >= 95) {
+           $("#outputGpa").html("Your GPA Is: 4.0")
+    } else if (num >= 65 && num <= 74) {
+           $("#outputGpa").html("Your GPA Is: 1.0")
+    } else if (num >= 75 && num <= 84) {
+           $("#outputGpa").html("Your GPA Is: 2.0")
+    } else if (num >= 85 && num <= 94) {
+           $("#outputGpa").html("Your GPA Is: 3.0")
+    } else if (num >= 64 && num <= 63) {
+    }
+   });
+});    
+</script>
+</head>
+<body>
+<div class="container-fluid" >
+<div class="page-header">
+<div class="jumbotron text-center">
+    <h1>Max O. Assignment 2</h1></div>
+</div>
+    <h3 class="text-center">GPA Calculation</h3>
+    <p>Put Your Score Here: <input type="text" id="scoreNum"><br>
+    <input type="button" id="calculateGpa" value="Click Here To Calculate Your GPA!"><br>
+    </p>
+    <p id="outputGpa">Your GPA Will Be Displayed Here</p>
+</div>
+</body>
+</html>                                		                                

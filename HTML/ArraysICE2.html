@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Custom Sort Order: Numbers</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<!--		<script type="text/javascript" src="jquery-1.7.1.js"></script> -->
+        <script type="text/javascript">
+// return < 0 (negative number) if a goes first
+// return zero exactly if they have the same value
+// return > 0 (positive number) if b goes first
+
+// This will sort things so that the highest number
+// goes first
+function highestToLowest(a, b){
+	//				alert("a: " + a + " b: " + b);
+//	a = Number(a);
+//	b = Number(b);
+	if (a > b)
+		// if a is greater than b, then a goes first 
+		return -1; 
+	else if (a < b )
+		// if b is greater than a, then b goes first 
+		return 1;
+	else 
+		// if they're the same, return 0
+		return 0;
+}
+
+function highestToLowestCompact(a, b){
+	return Number(b) - Number(a);
+}
+
+$(document).ready( function() {	
+	$("#doStuff").click( function(){
+		var movies = new Array("Inception", "The Prestige", "Following", "Memento", "Insomnia");
+		var nums = [1, 10, 3, 2, 21, 31, 11, 31, -100];
+		var nums2 = [1, 10, 3, 2, 21, 31, 11, 31, -100];
+		
+		var stOut = "";
+		stOut += "The Movies array initially contains:<br/>" + movies.join("<br/>") + "<br/>";
+		
+		// Sorting arrays: (Using the default 'dictionary' sort
+		movies.sort( );
+		
+		stOut += "<b>After calling sort:</b><br/>"+ movies.join("<br/>")+ "<br/>";
+
+		stOut += "<h3>Nums, Unsorted:</h3>"
+		stOut += nums;
+		
+		nums.sort();
+		
+		stOut += "<h3>Nums, sorted naively:</h3>"
+		stOut += nums;
+
+		stOut += "<hr><h3>Nums<font color=\"red\">2</font>, UNsorted:</h3>";
+		stOut += nums2;
+
+		stOut += "<h3>Nums<font color=\"red\">2</font>, sorted highest to lowest:</h3>";
+		
+		nums2.sort(highestToLowest); // function reference - NO PARENTHESES!!! ()'s
+		stOut += nums2;
+		
+		stOut += "<h3>Nums<font color=\"red\">2</font>, sorted highest to lowest (compact):</h3>";
+		
+		nums2.sort(   highestToLowestCompact     ); // function reference - NO PARENTHESES!!! ()'s
+		stOut += nums2;
+
+		// For output down the side of the page:
+		// stOut += nums2.join("<br/>")
+		
+		$("#output").html( stOut );
+	});
+});
+    </script>
+    </head>
+    <body>
+        <h1>Custom Sort Order: Array Of Numbers Demo</h1>
+        <form>
+            <input type="button" value="Click here!" id="doStuff"/>
+        </form>
+        <div id="output" style="font-size:x-large;">
+        </div>
+    </body>
+</html>

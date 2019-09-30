@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrays ICE</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
+<script>
+$(document).ready( function() {
+	$("#doStuff").click( function() {
+    var strings = new Array("Foxtrot", "Alpha", "Kilo", "Echo", "Romeo");
+    var nums = [1, 10, 5, 88, 9,];
+    var stout = "";
+    stout += "The strings look like this:<br/>" + strings.join("<br/>") + "<br/>";
+    strings.sort();
+    stout += "<b>But now they look like this:</b><br/>" + strings.join("<br/>") + "<br/>";
+    stout += "<h3>The numbers look like this:</h3>"
+    stout += nums;
+    nums.sort();
+    stout += "<h3>Now they look like this:</h3>"
+    stout += nums;
+    $("#output").html(stout);
+    });
+});
+</script>
+<body>
+<h1>Various Ways To use Arrays</h1>
+<p>Click the button to use Concat.</p>
+<button onclick="concatFunction()">Concat</button>
+<p id="concat"></p>
+<script>
+function concatFunction() {
+  var num = ["1", "2", "3", "4", "5"];
+  var nums = ["6", "7", "8","9", "10"];
+  var moreNums = num.concat(nums); 
+  document.getElementById("concat").innerHTML = moreNums;
+}
+</script>
+<p>Click the button to use Join.</p>
+<button onclick="joinFunction()">Join</button>
+<p id="join"></p>
+<script>
+function joinFunction() {
+    var num = ["1", "2", "3", "4", "5"];
+    var joinNums = document.getElementById("join");
+    joinNums.innerHTML = num.join();
+}
+</script>
+<p>Click on the button to use Splice.</p>
+<button onclick="spliceFunction()">Splice</button>
+<p id="splice"></p>
+<script>
+function spliceFunction() {
+  var num = ["1", "2", "3", "4", "5"];
+  num.splice(2, 3, "100", "101");
+  document.getElementById("splice").innerHTML = num;  
+}    
+</script>
+<p>Click on the button to use Slice.</p>
+<button onclick="sliceFunction()">Slice</button>
+<p id="slice"></p>
+<script>
+function sliceFunction() {
+  var nums = ["6", "7", "8","9", "10"];
+  var sliceNums = nums.slice(3, 4);
+  document.getElementById("slice").innerHTML = nums;
+  var extraNums = ["11", "12", "13", "14", "15"];
+  extraNums.splice(3, 4, "9", "10");
+  document.getElementById("slice").innerHTML = extraNums;
+}    
+</script>
+<p>Click the button to sort arrays.</p>
+    <form>
+    <input type="button" value="Sort" id="doStuff"/>
+    </form>
+    <div id="output" style="font-size:x-large;">
+    </div>
+</body>
+</head>
+</html>
+

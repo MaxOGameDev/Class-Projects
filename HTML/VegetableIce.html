@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Template</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#getResponse").click(function(){
+        var whichButton=$('input:radio[name=vegetable]:checked').val();
+            alert("Here's some info: " + whichButton);
+                if(whichButton===undefined)
+                    $("#responseHere").html("Pick one!");
+                else if(whichButton==="Tomato")
+                    $("#responseHere").html("It's red. Also pizza.");
+                else if(whichButton==="Beet")
+                    $("#responseHere").html("Are we even sure this thing is real?");
+                else if(whichButton==="Carrot")
+                    $("#responseHere").html("Actually pretty decent");
+                else if(whichButton==="Potato")
+                    $("#responseHere").html("Gets the Irish blood goin'");
+                else 
+                    $("#responseHere").html("INTERNAL ERROR: THIS SHOULD NEVER SHOW UP");
+    }); 
+});    
+</script>
+</head>
+<body>
+<h1>Vegetable Feedback</h1>
+<form>
+<p>
+<input type="radio" name="vegetable" value="Tomato">Tomato<br/>
+<input type="radio" name="vegetable" value="Beet">Beet
+<input type="radio" name="vegetable" value="Carrot">Carrot<br/>
+<input type="radio" name="vegetable" value="Potato">Potato
+<input type="button" name="getResponse" value="Click For Info">
+</p>    
+</form>
+<p id="responseHere">Text that will change when button is pressed</p>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Assignment 1</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+  document.write(unescape("%3Cscript src='../../Shared/jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<script>
+    $(document).ready(function(){
+       $("#calculatePay").click(function(){
+          var num=$("#payNum").val();
+            if (num >= 0)
+            {
+                $("#outputPay").html("Weekly Pay: $" + num);
+            }
+    });
+});
+    $(document).ready(function(){
+        $("#calculateTax").click(function(){
+            var num=$("#payNum").val();
+              if (num >= 0)
+               {
+                   var num=num * 0.15
+                   $("#outputTax").html("Federal Tax: $" + num);     
+               }
+     });
+});
+    $(document).ready(function(){
+        $("#calculateFica").click(function(){
+            var num=$("#payNum").val();
+              if (num >= 0)
+               {
+                    var num=num * 0.075
+                    $("#outputFica").html("FICA: $" + num);
+               }
+    });
+});
+    $(document).ready(function(){
+        $("#calculateNet").click(function(){
+            var num=$("#payNum").val();
+              if (num >= 0)
+               {
+                    var num=num - num * 0.225
+                    $("#outputNet").html("Net Pay: $" + num);
+               }
+    });
+});
+</script>
+</head>
+<body>
+<h2>Net Pay After Tax and FICA Payments</h2>    
+<form>  
+<p>Type Weekly Amount:<input type="text" id="payNum"><br>  
+<input type="button" id="calculatePay" value="Calculate Weekly Pay"><br>
+<input type="button" id="calculateTax" value="Calculate Tax"><br>
+<input type="button" id="calculateFica" value="Calculate FICA"><br>
+<input type="button" id="calculateNet" value="Calculate Net Pay"><br>
+</p>
+<p id="outputPay">Weekly Pay: $</p>
+<p id="outputTax">Federal Tax: $</p>
+<p id="outputFica">FICA: $</p>
+<p id="outputNet">Net Pay: $</p>
+</form>   
+</body>

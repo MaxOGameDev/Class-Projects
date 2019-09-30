@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Template</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+document.write(unescape("%3Cscript src='jquery-1.11.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+<script>
+    $(document).ready(function(){
+       $("#foodBill").click(function(){
+          var num=$("#billNum").val();
+            if (num > 0)
+            {
+                var num=num * (1 + 0.15)
+                $("#outputBill").html("The total cost with tip is $ " + num);
+            } else if (num <= 0) { 
+                $("outputBill").html("We're not paying you to eat here, asshole");
+            } else {
+                $("outputBill").html("See ya!");
+            }
+       }); 
+    });
+</script>
+</head>
+<body>
+<h2>Total Cost To Eat With %15 Tip</h2>    
+<form>  
+<p>Type the initial cost to eat here:<input type="text" id="billNum"><br>  
+<input type="button" id="foodBill" value="Calculate cost with tip"><br>  
+</p>
+<p id="outputBill">Here comes the bill</p>
+</form>   
+</body>
