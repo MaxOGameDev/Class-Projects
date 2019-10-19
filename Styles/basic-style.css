@@ -9,11 +9,11 @@ figcaption{color: white;}
 
 h1 {font-size: 2.6rem;}
 
-p, li{font-size: 1.4rem;}
+p, li{font-size: 2.5rem;}
 
 p{color: darkgray;}
 
-li{line-height: 1.5;}
+li{line-height: 1.5; display: inline;}
 
 a:link{color: crimson;}
 
@@ -22,3 +22,7 @@ a:visited{color: rebeccapurple;}
 a:hover{color: darkred; background-color: darkgray; text-decoration: none;}
 
 a:active{color: darkgray; background-color: darkred; text-decoration: none;}
+
+footer{font-size: 2.5rem; color: white; padding: inherit;}
+
+section{font-size: 2.5rem; color: white; padding: inherit;}
