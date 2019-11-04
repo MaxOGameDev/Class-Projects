@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <!-- change the above to href="/styles/style.css" whatever 
+      location your styles folder is in. For me, it would be "/bit112-fall-2019/styles/style.css" because my site is 
+      https://alboss-cascadia.github.io/bit112-fall-2019/ 
+      But, be aware that will make the CSS not display on your computer. You'll have to upload to GitHub and look there. -->
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>Project Unicorn</title>
+  </head>
+  <body>
+    <header>
+      <h1>Unicorns and Zombies</h1>
+      <div w3-include-html="nav.html"></div>
+      <!-- change the above to href="/nav.html" if you want it to work in all folders. If that does not work, put a slash and whatever 
+      location your site is in. For me, it would be "/bit112-fall-2019/nav.html" because my site is 
+      https://alboss-cascadia.github.io/bit112-fall-2019/ -->
+    </header>
+    <main>
+      <section>
+        <p>
+          Researchers disagree on which is more awesome: unicorns or zombies.
+        </p>
+      </section>
+    </main>
+    <footer>
+      &copy;Al Boss for
+      <a href="https://cascadia.edu" target="_blank">Cascadia College</a>
+    </footer>
+    <!-- Enable includes -->
+    <script src="scripts/includes.js"></script>
+
+    <!-- If you are wanting to use includes throughout your site, you'll have to change the above link to be whatever 
+      location your script is in. For me, it would be "/bit112-fall-2019/scripts/includes.js" because my site is 
+      https://alboss-cascadia.github.io/bit112-fall-2019/ -->
+
+    <script>
+      includeHTML();
+    </script>
+  </body>
+</html>
