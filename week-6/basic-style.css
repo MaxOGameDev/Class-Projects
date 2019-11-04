@@ -1,0 +1,36 @@
+html{
+    font-size: 10px;
+    font-family: Helvetica, Arial, sans-serif;  
+    background-color: black;
+}
+header, main{padding: 2.5rem; background-color: black; color: darkorange; border-bottom-color: darkorange; border-bottom-style: dotted; margin: auto; display: inline-block; float: right; position: fixed; width: 2.5; height: 2.5;}
+
+figcaption{color: white;}
+
+h1 {font-size: 2.6rem;}
+
+p, li{font-size: 1.4rem; color: white;}
+
+p{color: darkgray;}
+
+li{line-height: 1.5;}
+
+a:link{color: crimson;}
+
+a:visited{color: rebeccapurple;}
+
+a:hover{color: darkred; background-color: darkgray; text-decoration: none;}
+
+a:active{color: darkgray; background-color: darkred; text-decoration: none;}
+
+footer{font-size: 2.5rem; color: darkorange; padding: inherit; margin: auto; display: inline-block; float: right; position: fixed; width: 2.5; height: 2.5; padding: 2.5rem;}
+
+section{font-size: 2.5rem; color: darkorange; padding: inherit;}
+
+nav{font-size: 2.5rem; color: white; padding: inherit; margin: auto; display: inline-block; float: right; position: fixed; width: 2.5; height: 2.5; padding: 2.5rem;}
+
+section#meme{float: right; padding-left: 2em;}
+
+section#images{clear: right;}
+
+.bit-columns{top: 40px; left: 40px; font-size: 2.5rem; color: orange; column-count: 3;}
