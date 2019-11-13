@@ -11,13 +11,13 @@ h1 {font-size: 2.6rem;}
 
 p, li{font-size: 2.5rem;}
 
-p{color: darkgray;}
+p{color: white;}
 
 li{line-height: 1.5; display: inline; color: white;}
 
 a:link{color: crimson;}
 
-a:visited{color: rebeccapurple;}
+a:visited{color: orangered;}
 
 a:hover{color: darkred; background-color: darkgray; text-decoration: none;}
 
