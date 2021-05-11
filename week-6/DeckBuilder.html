@@ -4,7 +4,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript">var apiUrl = "https://api.magicthegathering.io"</script>
 <style>
         h1 {text-align: center;}
         .topnav{
@@ -12,25 +11,15 @@
                 text-align: center;
         }
     </style>
-        <title>Magic: The Gathering Deck Builder</title>
+        <title>Hearthstone Card Gallery</title>
 </head>
 <body>
     <header>
-        <h1>MTG Deck Builder</h1>
+        <h1>Hearthstone Card Gallery</h1>
     </header>
     <div class="topnav">
         <input type="text" placeholder="Search Cards">
     </div>
-    <!-- Get all cards function -->
-<div>
-    <script type="text/javascript"> 
-        const mtg = require('mtgsdk')
-        mtg.card.all()
-        .on('data', function (card) {
-        console.log(card.name)
-});
-    </script>
-</div>
 <!-- Display first row of cards -->
 <div class="card-deck">    
     <div class="card">
